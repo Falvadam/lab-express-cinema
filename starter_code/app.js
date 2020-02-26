@@ -13,14 +13,13 @@ const Movie = require('./model/Movie')
 const data = require('./bin/seeds.js')
 
 mongoose
-  .connect('mongodb://localhost/starter-code', {
+  .connect('mongodb://localhost/movies', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(async x => {
+  .then( x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-
-    //const movies = await Movie.create(data)
+    // Movie.create(data).then(() => console.log('Base Creada')).catch(err => console.log(err))
 
   })
   .catch(err => {

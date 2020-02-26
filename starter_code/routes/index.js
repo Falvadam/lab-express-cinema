@@ -10,6 +10,7 @@ router
   .get('/movies', async (req, res) => {
 
     const movies = await Movie.find()
+    console.log(movies)
     //console.log(movies)
 
     res.render('movies', {movies})
